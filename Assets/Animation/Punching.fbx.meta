@@ -46,19 +46,68 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
-      loopBlendOrientation: 0
+      loopBlendOrientation: 1
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 1
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0
+        functionName: StopAgent
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: e122f3df1ecb8f24eb16a69958b4e3e9, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.048859924
+        functionName: StartAttack
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: e122f3df1ecb8f24eb16a69958b4e3e9, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.6060751
+        functionName: ColliderOn
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: e122f3df1ecb8f24eb16a69958b4e3e9, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.7419979
+        functionName: ColliderOff
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: e122f3df1ecb8f24eb16a69958b4e3e9, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.96666676
+        functionName: TransToPlayer
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: e122f3df1ecb8f24eb16a69958b4e3e9, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.9869707
+        functionName: StopAttack
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: e122f3df1ecb8f24eb16a69958b4e3e9, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 1
+        functionName: StartAgent
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: e122f3df1ecb8f24eb16a69958b4e3e9, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}

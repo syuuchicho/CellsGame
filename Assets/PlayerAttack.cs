@@ -5,17 +5,18 @@ using UnityEngine;
  
 public class PlayerAttack : MonoBehaviour
 {
-
+    //インスペクターで攻撃力を定義
+    public int playerDamage;
     //オブジェクトと接触した瞬間に呼び出される
     void OnTriggerEnter(Collider other)
     {
+        //当たったオブジェクトのIDamageAbleを呼び出す
         IDamagAble IDamagAble =other.gameObject.GetComponent<IDamagAble>();
+        EnemyScript enemyScript = other.gameObject.GetComponent<EnemyScript>();
+
         //当たった相手がEnemyの場合
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy")|| other.CompareTag("Boss"))
         {
-            int playerDamage = 30;
-            //other.gameObject.GetComponent<PlayerController>().AddDamage(playerDamage);
-            //other.gameObject.GetComponent<EnemyScript>().Damage(playerDamage);
             IDamagAble.AddDamage(playerDamage);
         }
     }
