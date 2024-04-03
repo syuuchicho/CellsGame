@@ -9,15 +9,18 @@ public class KameraManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        pos=Camera.main.gameObject.transform.position;//カメラの初期位置
+        pos = Camera.main.gameObject.transform.position;//カメラの初期位置
+        pos.z = -15;//奥行き
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 cameraPos=target.transform.position;
-
-        cameraPos.z = -10;//奥行き
-        Camera.main.gameObject.transform.position = cameraPos;
+        //横軸だけ追従
+        pos.x = target.transform.position.x;
+        //縦軸追従
+        pos.y = target.transform.position.y;
+        
+        Camera.main.gameObject.transform.position = pos;
     }
 }

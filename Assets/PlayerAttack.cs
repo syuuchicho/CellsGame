@@ -2,21 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
- 
+
 public class PlayerAttack : MonoBehaviour
 {
-
+    //インスペクターで攻撃力を定義
+    public int playerDamage;
     //オブジェクトと接触した瞬間に呼び出される
     void OnTriggerEnter(Collider other)
     {
-        IDamagAble IDamagAble =other.gameObject.GetComponent<IDamagAble>();
+        //当たったオブジェクトのIDamageAbleを呼び出す
+        IDamagAble IDamagAble = other.gameObject.GetComponent<IDamagAble>();
+        EnemyScript enemyScript = other.gameObject.GetComponent<EnemyScript>();
+        BossScript bossScript = other.gameObject.GetComponent<BossScript>();
         //当たった相手がEnemyの場合
         if (other.CompareTag("Enemy"))
         {
-            int playerDamage = 30;
-            //other.gameObject.GetComponent<PlayerController>().AddDamage(playerDamage);
-            //other.gameObject.GetComponent<EnemyScript>().Damage(playerDamage);
             IDamagAble.AddDamage(playerDamage);
+            //ダメージ表現　赤
+            enemyScript.ChangeColToR();
+        }
+        if (other.CompareTag("Boss"))
+        {
+            IDamagAble.AddDamage(playerDamage);
+            //ダメージ表現　赤
+            bossScript.ChangeColToR();
         }
     }
 }

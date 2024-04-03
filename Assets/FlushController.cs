@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class FlushController : MonoBehaviour
 {
-    public static FlushController instance { get;private set; }
+    public static FlushController instance { get; private set; }
     Image img;
 
     void Start()
@@ -17,22 +17,28 @@ public class FlushController : MonoBehaviour
 
     void Update()
     {
-        {
-            this.img.color = Color.Lerp(this.img.color, Color.clear, Time.deltaTime);
-        }
+        this.img.color = Color.Lerp(this.img.color, Color.clear, Time.deltaTime);
     }
+    //ê¬
     public void BlueScreen()
     {
         this.img.color = new Color(0f, 0.7f, 1.0f, 0.5f);
     }
+    //ê‘
     public void RedScreen()
     {
-        this.img.color = new Color(0.5f, 0f, 0f, 0.5f);
+        this.img.color = new Color(0.5f, 0.1f, 0.1f, 0.1f);
     }
 
-    public void YellowScreen() 
+    //â©êF
+    public void YellowScreen()
     {
-        //â©êF
         this.img.color = new Color(1.0f, 1.0f, 0.0f, 0.2f);
+    }
+
+    //îí
+    public void WhiteScreen()
+    {
+        this.img.color = new Color(1.0f, 1.0f, 1.0f, 0.2f);
     }
 }
